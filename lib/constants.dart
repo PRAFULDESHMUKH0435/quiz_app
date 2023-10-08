@@ -18,10 +18,10 @@ class Question{
   ];
 
   List<Question> questionbank =[
-    Question(q: 'Delhi Is Capital Of India', a: true),
-    Question(q: 'Nagpur IS Known As Orange City', a: true),
-    Question(q: 'Nagpur Is Center Part Of India', a: false),
-    Question(q: 'Nagpur Is Summer Capital Of Maharashtra  ', a: false),
+    Question(q: 'Delhi Is Capital Of India ?', a: true),
+    Question(q: 'Nagpur IS Known As Orange City ?', a: true),
+    Question(q: 'Nagpur Is Center Part Of India ?', a: false),
+    Question(q: 'Nagpur Is Summer Capital Of Maharashtra ?', a: false),
   ];
 
 
