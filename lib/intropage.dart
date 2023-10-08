@@ -13,7 +13,6 @@ class IntroPage extends StatefulWidget {
 
 class _IntroPageState extends State<IntroPage> {
   PageController _controller = PageController();
-
   bool islastpage = false;
 
   @override
@@ -42,8 +41,6 @@ class _IntroPageState extends State<IntroPage> {
                 InkWell(
                     onTap:()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage())),
                     child: Text('Skip',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),)),
-
-
                 SmoothPageIndicator(controller: _controller,count: 3),
 
 

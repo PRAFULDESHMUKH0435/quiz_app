@@ -2,17 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/constants.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+
   int index = 0;
+  Helper que =Helper();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepOrange,
+      ///APPBAR
       appBar: AppBar(
         title: Text('Quiz App',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
         actions: [
@@ -25,26 +28,25 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
+      ///BODY
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ///CONTAINER
             Container(
-              decoration: BoxDecoration(
-                color: Colors.green,
-              ),
               margin: EdgeInsets.all(10.0),
               height: 250,
               width: double.infinity,
               child: Image.network('https://akm-img-a-in.tosshub.com/sites/media2/indiatoday/images/stories/2016May/albert-einstein_053016040636.jpg',fit: BoxFit.fill),
             ),
 
+            ///QUESTIONS + BUTTONS
             Container(
               margin: EdgeInsets.all(15.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18.0),
-                // border: Border.all(color: Colors.pink,width: 5),
                 color: Colors.white
               ),
               width: double.infinity,
@@ -52,16 +54,19 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  // QUESTIONS
-                  Text('',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+                  Container(
+                    height: 200,
+                    alignment: Alignment(0,0),
+                    child: Text(que.questionbank[index].question,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),textAlign: TextAlign.center),
+                  ),
                   // TRUE AND FALSE BUTTONS
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Expanded(
                         child: InkWell(
-                          onTap: (){
-                            // checkanswer(index);
+                          onDoubleTap: (){
+                            que.checkanswer(index, true);
                             setState(() {
                               index++;
                             });
@@ -78,8 +83,12 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(width: 20,),
                       Expanded(
                         child: InkWell(
-                          onTap: (){
-                            // checkanswer(index);
+                          onDoubleTap: (){
+                            que.checkanswer(index,false);
+                            setState(() {
+                              index++;
+                              print('Index$index');
+                            });
                           },
                           child: Container(
                               decoration: BoxDecoration(
@@ -94,6 +103,13 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
+            ),
+
+            Container(
+              margin: EdgeInsets.all(12.0),
+              color: Colors.white,
+              height: 40,
+              child: que.scorekeeper.last,
             )
           ],
         ),
@@ -101,7 +117,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  int checkanswer(int idx){
-    return idx++;
-  }
 }
