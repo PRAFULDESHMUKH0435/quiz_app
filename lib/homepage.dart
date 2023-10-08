@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   // QUESTIONS
-                  Text('$index',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+                  Text('',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
                   // TRUE AND FALSE BUTTONS
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -90,7 +90,6 @@ class _HomePageState extends State<HomePage> {
                               child: TextButton(onPressed: (){}, child: Text('False',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white)))),
                         ),
                       ),
-
                     ],
                   )
                 ],
