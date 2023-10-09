@@ -18,16 +18,8 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.deepOrange,
       ///APPBAR
       appBar: AppBar(
+        centerTitle: true,
         title: Text('Quiz App',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 20),
-            child: CircleAvatar(
-              radius: 20,
-              child: Image.network('https://cdn-icons-png.flaticon.com/512/25/25231.png'),
-            ),
-          )
-        ],
       ),
       ///BODY
       body: SingleChildScrollView(
@@ -109,11 +101,27 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     height:400,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text('Result Is :',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
-                        Text('Correct Answers :',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
-                        Text('Wrong Answers  :',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
+                        Text('Correct Answers : ${que.correctanswer}',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
+                        Text('Wrong Answers  : ${que.wronganswer}',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
+                        Container(
+                          height: 50,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                            color: Colors.white,
+                          ),
+                          margin: EdgeInsets.all(12.0),
+                          child: OutlinedButton(onPressed: (){
+                            setState(() {
+                              index=0;
+                              que.correctanswer=0;
+                              que.wronganswer=0;
+                            });
+                          }, child: Text('Retry',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)),
+                        )
                       ],
                     ),
             ),
