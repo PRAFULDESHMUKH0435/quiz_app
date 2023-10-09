@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage>{
         title: Text('Quiz App',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
         actions: [
           IconButton(onPressed: (){
-            Navigator.of(context).pop(true);
+
           }, icon: Icon(Icons.logout))
         ],
       ),
