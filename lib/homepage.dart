@@ -20,6 +20,11 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text('Quiz App',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+        actions: [
+          IconButton(onPressed: (){
+            Navigator.of(context).pop(true);
+          }, icon: Icon(Icons.logout))
+        ],
       ),
       ///BODY
       body: SingleChildScrollView(
@@ -47,7 +52,16 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(
+                 Container(
+                   margin:EdgeInsets.only(right: 10),
+                   child: Row(
+                     mainAxisAlignment: MainAxisAlignment.end,
+                     children: [
+                       Text('${index+1}/${que.questionbank.length}',style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),)
+                     ],
+                   ),
+                 ),
+                 Container(
                     height: 200,
                     alignment: Alignment(0,0),
                     child: Text(que.questionbank[index].question,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),textAlign: TextAlign.center),
@@ -75,14 +89,14 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(width: 20,),
                       Expanded(
-                        child: InkWell(
-                          onDoubleTap: (){
-                            que.checkanswer(index,false);
-                            setState(() {
-                              index++;
-                              print('Index$index');
-                            });
-                          },
+                          child: InkWell(
+                         onDoubleTap: (){
+                             que.checkanswer(index,false);
+                             setState(() {
+                               index++;
+                               print('Index$index');
+                             });
+                         },
                           child: Container(
                               decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15.0),
@@ -130,5 +144,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+
 
 }

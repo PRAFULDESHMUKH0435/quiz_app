@@ -24,6 +24,13 @@ class Question{
     Question(q: 'Nagpur Is Known As Orange City ?', a: true),
     Question(q: 'Nagpur Is Center Part Of India ?', a: true),
     Question(q: 'Nagpur Is Summer Capital Of Maharashtra ?', a: false),
+    Question(q: 'Flutter Is Written In Dart Language ?', a: true),
+    Question(q: 'Flutter Is Developed By Facebook ?', a: false),
+    Question(q: 'React Native Is Developed By Facebook ?', a: true),
+    Question(q: 'React Native Is Developed By Facebook ?', a: true),
+    Question(q: 'Zealandia Is The 8th Continent Found ?', a: true),
+    Question(q: 'IPhone 17 Is Launched', a: false),
+
   ];
 
    void checkanswer(int idx , bool answer){
