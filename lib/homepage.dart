@@ -6,7 +6,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>{
   int index = 0;
   Helper que =Helper();
   List scorekeeer=[];
