@@ -12,7 +12,7 @@ class Question{
 }
  class Helper{
 
-  List<Widget> scorekeeper =[
+  List<Icon> scorekeeper =[
     Icon(Icons.check,color: Colors.green,),
     Icon(Icons.clear,color: Colors.red,),
   ];
@@ -23,8 +23,6 @@ class Question{
     Question(q: 'Nagpur Is Center Part Of India ?', a: false),
     Question(q: 'Nagpur Is Summer Capital Of Maharashtra ?', a: false),
   ];
-
-
 
    void checkanswer(int idx , bool answer){
     if(answer==questionbank[idx].answer){

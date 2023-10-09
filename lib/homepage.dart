@@ -10,6 +10,7 @@ class _HomePageState extends State<HomePage> {
 
   int index = 0;
   Helper que =Helper();
+  List scorekeeer=[];
 
   @override
   Widget build(BuildContext context) {
@@ -34,16 +35,16 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ///CONTAINER
+            ///BANNER CONTAINER
             Container(
               margin: EdgeInsets.all(10.0),
               height: 250,
               width: double.infinity,
               child: Image.network('https://akm-img-a-in.tosshub.com/sites/media2/indiatoday/images/stories/2016May/albert-einstein_053016040636.jpg',fit: BoxFit.fill),
             ),
-
             ///QUESTIONS + BUTTONS
-            Container(
+            (index<que.questionbank.length==true)?
+                  Container(
               margin: EdgeInsets.all(15.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18.0),
@@ -103,14 +104,19 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
-            ),
-
-            Container(
-              margin: EdgeInsets.all(12.0),
-              color: Colors.white,
-              height: 40,
-              child: que.scorekeeper.last,
             )
+            :
+                  Container(
+                    height:400,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text('Result Is :',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
+                        Text('Correct Answers :',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
+                        Text('Wrong Answers  :',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
+                      ],
+                    ),
+            ),
           ],
         ),
       ),
