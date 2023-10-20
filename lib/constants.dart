@@ -12,7 +12,7 @@ class Question{
 }
  class Helper{
 
-    int correctanswer =0;
+   int correctanswer =0;
    int wronganswer =0;
   List<Icon> scorekeeper =[
     Icon(Icons.check,color: Colors.green,),
@@ -27,7 +27,7 @@ class Question{
     Question(q: 'Flutter Is Written In Dart Language ?', a: true),
     Question(q: 'Flutter Is Developed By Facebook ?', a: false),
     Question(q: 'React Native Is Developed By Facebook ?', a: true),
-    Question(q: 'React Native Is Developed By Facebook ?', a: true),
+    Question(q: 'Ali-Pay Is Developed In Flutter ?', a: true),
     Question(q: 'Zealandia Is The 8th Continent Found ?', a: true),
     Question(q: 'IPhone 17 Is Launched', a: false),
 
