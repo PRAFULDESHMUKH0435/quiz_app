@@ -42,15 +42,13 @@ class _IntroPageState extends State<IntroPage> {
                     onTap:()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage())),
                     child: Text('Skip',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),)),
                 SmoothPageIndicator(controller: _controller,count: 3),
-
-
                 islastpage?
                 InkWell(
                     onTap: ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage())),
                     child: Text('Done',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),))
                 :
                 InkWell(
-                    onTap: ()=>_controller.nextPage(duration: Duration(seconds: 1), curve: Curves.bounceInOut),
+                    onTap: ()=>_controller.nextPage(duration: Duration(seconds: 1), curve: Curves.easeInCubic),
                     child: Text('Next',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),))
               ],
             )

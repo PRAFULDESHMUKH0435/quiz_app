@@ -24,11 +24,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         title: Text('Quiz App',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-        actions: [
-          IconButton(onPressed: () {
-            _onbackpressed(context);
-          }, icon: Icon(Icons.logout))
-        ],
+
       ),
 
       ///BODY
